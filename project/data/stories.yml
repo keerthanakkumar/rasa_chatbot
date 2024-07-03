@@ -1,0 +1,108 @@
+version: "3.1"
+
+stories:
+
+- story: greet path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: greeting path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fine
+  - action: utter_intro
+
+- story: courses path
+  steps:
+  - intent: courses
+  - action: utter_courses
+  - action: utter_choice
+
+- story: testing path
+  steps:
+  - intent: testing
+  - action: utter_appreciate
+  - action: utter_testing
+
+- story: testing path
+  steps:
+  - intent: testing
+  - action: utter_appreciate
+  - action: utter_testing
+  - action: utter_help
+
+- story: data science path
+  steps:
+  - intent: data science
+  - action: utter_appreciate
+  - action: utter_data_science
+  - action: utter_help
+
+- story: python path
+  steps:
+  - intent: python
+  - action: utter_appreciate
+  - action: utter_python
+  - action: utter_help
+
+- story: mearn path
+  steps:
+  - intent: mearn
+  - action: utter_appreciate
+  - action: utter_mearn
+  - action: utter_help
+
+- story: flutter path
+  steps:
+  - intent: flutter
+  - action: utter_appreciate
+  - action: utter_flutter
+  - action: utter_help   
+
+- story: asp path
+  steps:
+  - intent: asp
+  - action: utter_appreciate
+  - action: utter_asp
+  - action: utter_help
+
+- story: java path
+  steps:
+  - intent: java
+  - action: utter_appreciate
+  - action: utter_java
+  - action: utter_help
+
+- story: location path
+  steps:
+  - intent: location
+  - action: utter_location
+  - action: utter_help
+
+- story: contact path
+  steps:
+  - intent: contact
+  - action: utter_contact
+  - action: utter_help
+
+- story: no conclusion path
+  steps:
+  - intent: deny
+  - action: utter_no_help
+  - action: utter_goodbye
+
+- story: yes conclusion path
+  steps:
+  - intent: affirm
+  - action: utter_yes_help
+  - action: utter_how_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: thank you path
+  steps:
+  - intent: thanks
+  - action: utter_goodbye

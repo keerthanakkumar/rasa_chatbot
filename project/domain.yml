@@ -1,0 +1,172 @@
+version: "3.1"
+
+intents:
+  - greet
+  - thanks
+  - affirm
+  - deny
+  - fine
+  - courses
+  - testing
+  - data science
+  - python
+  - mearn
+  - flutter
+  - asp
+  - java
+  - location
+  - contact
+  
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_intro:
+  - text: "Great, how can i help you?"
+
+  utter_courses:
+  - text: |
+      We offer the following courses: <br>
+      1 ) Python Django - React - Full Stack Web Development Expert <br>
+      2 ) Python Data Science - ML - AI - & Power BI  <br>
+      3 ) MEA(R)N Stack Web Development Expert - Angular & React <br>
+      4 ) Software Testing Training - Manual & Automation <br>
+      5 ) Flutter <br>
+      6 ) Asp.net MVC with Angular - Full Stack <br>
+      7 ) Java Spring Full Stack Development <br>
+
+  utter_choice:
+  - text: "Which course are you interested in?"
+
+  utter_appreciate:
+  - text: "Good Choice !!"
+
+  utter_testing:
+  - text: "Next Batch: <br>
+  Cochin : July 17th 2024 (Offline & Online) <br>
+  Calicut : June 19th 2024 (Offline Only) <br>
+  <br>
+  Duration: <br>
+  4 Months, 5 Days a Week, 1.5 - 2 Hours/day <br>
+  <br>
+  Course Fee: <br>
+  Fees (EMI Mode) : 41000 <br>
+  Fees (One time Payment mode) : 37500"
+
+  utter_data_science:
+  - text: "Next Batch: <br>
+  Cochin : Aug 12th 2024 (Offline & Online) <br>
+  Calicut : Sep 18th 2024 (Offline) <br>
+  <br>
+  Duration: <br>
+  7 Months, 5 Days a Week, 1.5 - 2 Hours/day <br>
+  <br>
+  Course Fee: <br>
+  Fees (EMI Mode) : 72000 <br>
+  Fees (One time Payment mode) : 64500"
+
+  utter_python:
+  - text: "Next Batch: <br>
+  Cochin : July 17th 2024 (Offline & Online) <br>
+  Calicut : June 17th 2024 (Offline Only) <br>
+  <br>
+  Duration: <br>
+  6.5 Months, 5 Days a Week, 2 Hours/day <br>
+  <br>
+  Course Fee: <br>
+  Fees (EMI Mode) : 45000 <br>
+  Fees (One time Payment mode) : 39500 "
+
+  utter_mearn:
+  - text: " Next Batch: <br>
+  Cochin : Aug 12th 2024 (Offline & Online) <br>
+  Calicut : June 19th 2024 (Offline) <br>
+  <br>
+  Duration: <br>
+  6 Months, 5 Days a Week, 1.5-2 Hours/day <br>
+  <br>
+  Course Fee: <br>
+  Fees (EMI Mode) : 55000 <br>
+  Fees (One time Payment mode) : 49500"
+
+  utter_flutter:
+  - text: "  Next Batch: <br>
+  Cochin : June 19th 2024 (Offline & Online) <br>
+  Calicut : June 19th 2024 (Offline Only) <br>
+  <br>
+  Duration: <br>
+  5 months ( 2 Hours/day) <br>
+  <br>
+  Course Fee: <br>
+  Fees (EMI Mode) : 41000 <br>
+  Fees (One time Payment mode) : 37500"
+
+  utter_asp:
+  - text: " Next Batch: <br>
+  Cochin : July 17th 2024 (Offline & Online) <br>
+  Calicut : Not Available <br>
+  <br>
+  Duration: <br>
+  5 Months, 5 Days a Week, 2 Hours/day <br>
+  <br>
+  Course Fee: <br>
+  Fees (EMI Mode) : 45000 <br>
+  Fees (One time Payment mode) : 39500" 
+
+  utter_java:
+  - text: " Next Batch: <br>
+  Cochin : Aug 21st 2024 (09:00 AM - 11:00 AM) <br>
+  Calicut : Not Available <br>
+  <br>
+  Duration: <br>
+  4 Months, 5 Days a Week, 2 Hours/day <br>
+  <br>
+  Course Fee: <br>
+  Fees (EMI Mode) : 41000 <br>
+  Fees (One time Payment mode) : 37500" 
+
+  utter_help:
+  - text: "Was this information helpful?"
+
+  utter_no_help:
+  - text: " Oh no! Feel free to contact 8943237927 for further details"
+
+  utter_yes_help:
+  - text: "Great!!"
+
+  utter_how_help:
+  - text: "Do you want any other help?"
+
+  utter_location:
+  - text: " Cochin <br>
+  <br>
+  Luminar Technolab Pvt Ltd <br>
+  Ground Floor,K7 REALTY, <br>
+  Juma masjid road, <br>
+  Seaport - Airport Rd,near Opp: District Panchayat, <br>
+  Kakkanad, Kochi, Kerala - 682030 <br>
+  Call:+91 8086 651 651 <br>
+  Email: contact@luminartechnolab.com <br>
+  <br>
+  Calicut <br>
+  <br>
+  Luminar Technolab Pvt Ltd <br>
+  2nd Floor, 61/10222 ,<br>
+  Mullath Building, <br>
+  Opp. KSRTC Bus Stand, <br>
+  Mavoor Road, Calicut, Kerala-673001 <br>
+  Call: +91 8086 531 531, 0495 - 3573001 <br>
+  Email: contact@luminartechnolab.com"
+
+  utter_contact:
+  - text: "Call us on: +91 8086 651 651 <br>
+  Email us at: contact@luminartechnolab.com"
+
+  utter_goodbye:
+  - text: "Thank you. Have a nice day"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

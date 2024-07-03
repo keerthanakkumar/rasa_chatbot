@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasa Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            background-color: #fcf8fc;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #800080;
+            color: #fff;
+            border-radius: 7px;
+        }
+        
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        #chat {
+            width: 400px;
+            margin: 0 auto;
+        }
+        
+        #chat-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 400px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+        }
+        
+        .input-area {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        
+        .input-area input {
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+        
+        .input-area button {
+            background-color: #E0C0FF;
+            border: none;
+            padding: 7px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .message {
+            margin-top: 15px;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .user {
+            text-align: right;
+            background-color: #dcf8c6;
+        }
+        
+        .bot {
+            text-align: left;
+            background-color: #f1f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="chat">
+            <div id="chat-box">
+                <div class="header">
+                    <div class="title">Luminar chatbot</div>
+                </div>
+            </div>
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Type a message..." />
+                <button onclick="sendMessage()">Send</button>
+                <button onclick="startRecognition()">🎤</button>
+                <button onclick="stopRecognition()">⏹️</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const recognition = new(window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-US';
+        recognition.interimResults = false;
+
+        recognition.onresult = (event) => {
+            const transcript = event.results[0][0].transcript;
+            document.getElementById('user-input').value = transcript;
+        };
+
+        function startRecognition() {
+            recognition.start();
+        }
+
+        function stopRecognition() {
+            recognition.stop();
+        }
+
+        async function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            if (!userInput) return;
+
+            // Display user message
+            const chatBox = document.getElementById('chat-box');
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'message user';
+            userMessageDiv.textContent = userInput;
+            chatBox.appendChild(userMessageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Send message to Rasa server
+            const response = await fetch('/send_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `message=${userInput}`,
+            });
+            const botResponses = await response.json();
+
+            // Display bot response and synthesize speech
+            botResponses.forEach(botResponse => {
+                const botMessageDiv = document.createElement('div');
+                botMessageDiv.className = 'message bot';
+                botMessageDiv.innerHTML = botResponse.text;
+                chatBox.appendChild(botMessageDiv);
+                chatBox.scrollTop = chatBox.scrollHeight;
+
+                // Synthesize bot response
+                const utterance = new SpeechSynthesisUtterance(botResponse.text);
+                window.speechSynthesis.speak(utterance);
+            });
+
+            // Clear user input
+            document.getElementById('user-input').value = '';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: thanks
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - thank you
+    - thanks
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - perfect
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: fine
+  examples: |
+    - i am doing well
+    - am doing well
+    - i'm doing well
+    - am doing great
+    - i am doing great
+    - i am doing well
+    - am doing well
+    - i'm doing great
+    - i'm doing well
+    - good
+    - great
+    - ok
+    - well
+    - fine
+    - doing great
+
+- intent: courses
+  examples: |
+    - courses
+    - course
+    - course available
+    - what courses
+    - what courses are here
+    - what courses are offered here
+    - what are the courses here
+    - what are the courses available
+    - courses available
+    - good course
+
+- intent: testing
+  examples: |
+    - software testing
+    - testing
+    - st
+    - Software Testing Training - Manual & Automation
+
+- intent: data science
+  examples: |
+    - data science
+    - ml
+    - ai
+    - power bi
+    - ds
+    - bd
+    - Python Data Science - ML - AI - & Power BI 
+
+- intent: python
+  examples: |
+    - python django
+    - python
+    - django
+    - Python Django - React - Full Stack Web Development Expert
+
+- intent: mearn
+  examples: |
+    - mearn
+    - mearn stack
+    - MEA(R)N Stack Web Development Expert - Angular & React
+
+- intent: flutter
+  examples: |
+    - flutter
+    - fl
+    - app development
+    
+- intent: asp
+  examples: |
+    - asp.net
+    - .net
+    - asp.net mvc
+    - mvc
+    - Asp.net MVC with Angular - Full Stack
+
+- intent: java
+  examples: |
+    - java
+    - full stack
+    - Java Spring Full Stack Development
+    - java spring
+    - java spring full stack
+
+- intent: location
+  examples: |
+    - location
+    - place
+    - loc
+    - where is luminar
+    - luminar location
+    - location luminar
+    - where is luminar located
+    - luminar loc
+    - luminar place
+    - place luminar
+    - calicut
+    - calicut location
+    - kochi
+    - kochi location
+    - cochin
+    - cochin location
+
+- intent: contact
+  examples: |
+    - contact
+    - contact number
+    - number
+    - phone number
+    - mobile number
+    - mobile
+    - phone
